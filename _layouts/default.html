@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    // Restore saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -16,7 +22,7 @@
         <a href="#">TEACHINGS ▾</a>
       </div>
       <div class="nav-right">
-        <span>ctrl k ⚙</span>
+        <button id="theme-toggle" title="Toggle Theme">🌙</button>
       </div>
     </nav>
   </header>
@@ -24,5 +30,22 @@
   <main class="container">
     {{ content }}
   </main>
+
+  <script>
+    // Theme toggle logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      if (current === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '🌙';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '☀️';
+      }
+    });
+  </script>
 </body>
 </html>
