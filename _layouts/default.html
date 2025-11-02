@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="{{ '/' | relative_url }}" class="nav-item active">HOME</a>
+        <a href="{{ '/blog' | relative_url }}">BLOG</a>
+        <a href="#">PROJECTS</a>
+        <a href="#">TEACHINGS ▾</a>
+      </div>
+      <div class="nav-right">
+        <span>ctrl k ⚙</span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+</body>
+</html>
