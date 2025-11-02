@@ -1,0 +1,12 @@
+- name: email
+  icon: envelope
+  url: "mailto:you@example.com"
+- name: google
+  icon: google
+  url: "https://scholar.google.com/"
+- name: linkedin
+  icon: linkedin
+  url: "https://www.linkedin.com/in/yourprofile"
+- name: rss
+  icon: rss
+  url: "/feed.xml"
