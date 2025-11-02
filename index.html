@@ -1,0 +1,44 @@
+---
+layout: default
+title: "Home"
+---
+
+<section class="intro">
+  <div class="text">
+    <h1><span class="highlight">Aayush</span> Bhatta</h1>
+    <p class="title">Teaching Assistant</p>
+    <p><a href="#">DMAE</a>, Pulchowk Campus<br>Tribhuvan University</p>
+    <p class="desc">
+      Welcome! I am a teaching assistant at the Department of Mechanical and Aerospace
+      Engineering of IOE-Pulchowk Campus, Tribhuvan University. My main research interests
+      are in the field of Structural Vibrations and Energy Harvesting.
+    </p>
+    <p>If you have any questions, curiosities or would like to collaborate,
+      please feel free to contact me!
+    </p>
+  </div>
+
+  <div class="photo">
+    <img src="assets/images/profile.jpg" alt="Aayush Bhatta" />
+  </div>
+</section>
+
+<section class="posts">
+  <h2>latest posts</h2>
+  <ul>
+    {% for post in site.posts limit:5 %}
+      <li>
+        <span>{{ post.date | date: "%b %d, %Y" }}</span>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="social">
+  <a href="#"><img src="icons/email.svg" alt="Email" /></a>
+  <a href="#"><img src="icons/google-scholar.svg" alt="Google Scholar" /></a>
+  <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
+  <a href="#"><img src="icons/rss.svg" alt="RSS" /></a>
+  <p class="note">You can even add a little note about which of these is the best way to reach you.</p>
+</section>
