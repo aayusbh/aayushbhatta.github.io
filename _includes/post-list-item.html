@@ -1,0 +1,9 @@
+<article class="post-list-item">
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <div class="meta">
+    <time datetime="{{ post.date }}">{{ post.date | date: "%b %d, %Y" }}</time>
+    {% if post.excerpt %}
+      <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+    {% endif %}
+  </div>
+</article>
