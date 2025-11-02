@@ -1,0 +1,7 @@
+title: "Aayush Bhatta"
+description: "Teaching Assistant, IOE Pulchowk Campus, Tribhuvan University"
+baseurl: ""
+url: "https://aayushbhatta.github.io"
+markdown: kramdown
+theme: null
+exclude: ["README.md"]
