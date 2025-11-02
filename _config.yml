@@ -1,7 +1,33 @@
 title: "Aayush Bhatta"
-description: "Teaching Assistant, IOE Pulchowk Campus, Tribhuvan University"
-baseurl: ""
-url: "https://aayushbhatta.github.io"
+email: "you@example.com"
+description: "Teaching Assistant — Structural Vibrations & Energy Harvesting"
+baseurl: "" # set to repository name if using project page, e.g. "/repo-name"
+url: "https://yourusername.github.io" # change to your GitHub Pages site url
+
+# Build settings (GitHub Pages supported)
 markdown: kramdown
-theme: null
-exclude: ["README.md"]
+theme: minima # we won't use the gem's templates, but this keeps compatibility
+plugins: []   # avoid plugins not supported by GitHub Pages
+
+# Collections / posts
+paginate: 6
+permalink: /:categories/:year/:month/:day/:title/
+
+# Social (used in footer)
+social:
+  - name: "email"
+    icon: "envelope"
+    url: "mailto:you@example.com"
+  - name: "google"
+    icon: "google"
+    url: "https://scholar.google.com"
+  - name: "linkedin"
+    icon: "linkedin"
+    url: "https://www.linkedin.com/in/yourprofile"
+  - name: "rss"
+    icon: "rss"
+    url: "/feed.xml"
+
+# SEO defaults
+twitter_username: ""
+github_username: yourusername
