@@ -1,51 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <script>
-    // Restore saved theme
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
-  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.excerpt | default: site.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:card" content="summary">
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="nav-left">
-        <a href="{{ '/' | relative_url }}" class="nav-item active">HOME</a>
-        <a href="{{ '/blog' | relative_url }}">BLOG</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">TEACHINGS ▾</a>
-      </div>
-      <div class="nav-right">
-        <button id="theme-toggle" title="Toggle Theme">🌙</button>
-      </div>
-    </nav>
-  </header>
+<body class="theme-dark">
+  {% include header.html %}
 
-  <main class="container">
-    {{ content }}
+  <main class="site-main container">
+    <div class="layout">
+      <div class="content">
+        {{ content }}
+      </div>
+      <div class="side">
+        {% include sidebar.html %}
+      </div>
+    </div>
   </main>
 
-  <script>
-    // Theme toggle logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      if (current === 'light') {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '🌙';
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '☀️';
-      }
-    });
-  </script>
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 </body>
 </html>
