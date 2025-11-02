@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<section class="home-hero">
+  <div class="hero-inner container">
+    <div class="hero-left">
+      <h1 class="hero-title">Aayush <strong>Bhatta</strong></h1>
+      <p class="hero-sub">Teaching Assistant — DMAE, Pulchowk Campus, Tribhuvan University</p>
+      <p class="hero-desc">{{ site.description }}</p>
+    </div>
+    <div class="hero-right">
+      <img class="hero-avatar" src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="Aayush">
+    </div>
+  </div>
+</section>
+
+<section class="features container">
+  <div class="features-grid">
+    <div class="feat">
+      <h3>Research</h3>
+      <p>Structural vibrations & energy harvesting</p>
+    </div>
+    <div class="feat">
+      <h3>Projects</h3>
+      <p>Incinerator design, combustion simulation</p>
+    </div>
+    <div class="feat">
+      <h3>Teaching</h3>
+      <p>Engineering drawing, labs, ANSYS</p>
+    </div>
+  </div>
+</section>
+
+<section class="latest container">
+  <h2>latest posts</h2>
+  <ul class="latest-list">
+    {% for post in site.posts limit:6 %}
+      <li>
+        <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
